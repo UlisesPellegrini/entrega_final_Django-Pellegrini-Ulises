@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title_head %}
+<title>Mascotas</title>
+{% endblock title_head %}
+
+{% block h1_header %}
+Mascota {{mascota.tipo}}
+{% endblock h1_header %}
+
+{% block main %}
+
+<ul>
+
+    <li> Tipo: {{mascota.tipo}}</li>
+    <li> Raza: {{mascota.raza}}</li>
+    <li> Descripcion: {{mascota.descripcion | safe }}</li>
+    <li> Fecha Nacimiento: {{mascota.fecha_nacimiento}}</li>
+    
+</ul>
+
+{% endblock main %}

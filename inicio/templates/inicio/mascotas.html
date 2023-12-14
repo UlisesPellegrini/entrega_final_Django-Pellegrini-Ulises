@@ -18,7 +18,7 @@ Mascotas
 {% if listado_de_mascotas %}
 <ul>
     {% for mascotas in listado_de_mascotas %}
-    <li>{{mascotas}} | <a href= {% url "actualizar_mascotas" mascotas.id %}>Actualizar</a> | <a href={% url "eliminar_mascotas" mascotas.id %}>Eliminar</a> | <a href={% url "detalle_mascotas" mascotas.id %}>Detalle</a> </li>
+    <li>{{mascotas}} | <a href= {% url "actualizar_mascota" mascotas.id %}>Actualizar</a> | <a href={% url "eliminar_mascota" mascotas.id %}>Eliminar</a> | <a href={% url "detalle_mascota" mascotas.id %}>Detalle</a> </li>
     {% endfor %}
 </ul>
 {% else %}

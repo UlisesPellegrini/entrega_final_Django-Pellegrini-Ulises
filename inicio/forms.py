@@ -1,17 +1,17 @@
 from django import forms
 from ckeditor.fields import RichTextFormField
 
-class BaseMascotasFormulario(forms.Form):
+class BaseMascotaFormulario(forms.Form):
     tipo = forms.CharField(max_length=50)
     raza = forms.CharField(max_length=50)
     descripcion = RichTextFormField()
-    fecha_nacimiento = models.DateField()
+    fecha_nacimiento = forms.DateField()
     
-class CrearMascotasFormulario(BasePaletasFormulario):
+class CrearMascotaFormulario(BaseMascotaFormulario):
     ...
 
-class BusquedaMascotasFormulario(forms.Form):
-    marca = forms.CharField(max_length=30, required=False)
+class BusquedaMascotaFormulario(forms.Form):
+    tipo = forms.CharField(max_length=30, required=False)
     
-class ActualizarMascotasFormulario(BasePaletasFormulario):
+class ActualizarMascotaFormulario(BaseMascotaFormulario):
     ...

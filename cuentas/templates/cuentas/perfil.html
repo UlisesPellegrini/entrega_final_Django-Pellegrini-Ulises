@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+
+{% block h1_header %}
+
+{{request.user.username}}
+
+{% endblock h1_header %}
+
+{% block main %}
+<div class="card" style="width: 500px;">
+    {% if request.user.datosextra.avatar %}
+            <div class="col-md-4">
+                <img src={{request.user.datosextra.avatar.url}} alt="avatar" class="card-img-top">   
+            </div>
+            {% endif %}
+    <div class="card-body">
+        <img src={{request.user.datosextras.avatar.url}} height='60px'>
+        <h5 class="card-title">{{request.user.username}}</h5>
+        <p class="card-text">Nombre: {{request.user.first_name}}</p>
+        <p class="card-text">Apellido: {{request.user.last_name}}</p>
+        <p class="card-text">Correo: {{request.user.email}}</p>
+        <p class="card-text">Biografia: {{request.user.datosextras.biografia}}</p>
+        
+        <a href={% url "editar_perfil" %} class="btn btn-primary">Editar Perfil</a>
+    </div>
+</div>
+{% endblock main %}

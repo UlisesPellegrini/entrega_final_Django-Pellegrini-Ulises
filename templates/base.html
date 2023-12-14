@@ -31,14 +31,16 @@
                     <ul class="navbar-nav ms-auto">
 
                         <li class="nav-item"><a class="nav-link" href={% url "sobre_mi" %}>Sobre Mi</a></li>
+                        <li class="nav-item"><a class="nav-link" href={% url "mascotas" %}>Mascotas</a></li>
+                        <li class="nav-item"><a class="nav-link" href={% url "crear_mascota" %}>Crear Mascotas</a></li>
 
                         {% if not request.user.is_authenticated %}
                         <li class="nav-item"><a class="nav-link" href={% url "login" %}>Iniciar Sesion</a></li>
                         <li class="nav-item"><a class="nav-link" href={% url "registrarse" %}>registrarse</a></li>
                         {% else %}
-                        <li class="nav-item"><a class="nav-link" href={% url "editar_perfil" %}>
+                        <li class="nav-item"><a class="nav-link" href={% url "perfil" %}>
                             {% if request.user.datosextras.avatar %}
-                                <img src={{request.user.datosextras.avatar.url}} alt="avatar" height='50px'>
+                                <img src={{request.user.datosextras.avatar.url}} alt="avatar" height='40px'>
                             {% endif %}
                             {{request.user.username}}</a></li>
                         <li class="nav-item"><a class="nav-link" href={% url "logout" %}>Cerrar Sesion</a></li>

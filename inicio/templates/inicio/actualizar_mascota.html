@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title_head %}
+<title>Actualizar Mascota</title>
+{% endblock title_head %}
+
+{% block h1_header %}
+Actualizar Mascota
+{% endblock h1_header %}
+
+{% block main %}
+
+<form action="" method="POST">
+
+    {% csrf_token %}
+    <table>
+        {{formulario.media}}
+        {{formulario}}
+    </table>
+    <input type="submit" value="Clear">
+</form>
+
+{% endblock main %}
